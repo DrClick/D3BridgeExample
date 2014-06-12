@@ -6,9 +6,9 @@ define(function(require, exports, module) {
     var Modifier = require('famous/core/Modifier');
     var Transform = require('famous/core/Transform');
     var ImageSurface = require('famous/surfaces/ImageSurface');
-    var Surface = require("famous/core/Surface");
+    var Surface = require('famous/core/Surface');
 
-    var d3 = require("D3");
+    var d3 = require('D3');
 
     // create the main context
     var mainContext = Engine.createContext();
@@ -29,8 +29,8 @@ define(function(require, exports, module) {
     var plane = new Surface({
         size: [window.innerWidth, window.innerHeight],
         properties:{
-            backgroundColor: "rgba(255,255,255,.1)",
-            border: "1px solid #3cf"
+            backgroundColor: 'rgba(255,255,255,.1)',
+            border: '1px solid #3cf'
         }
     });
     scene.add(new Modifier({
@@ -45,7 +45,7 @@ define(function(require, exports, module) {
 
 
     //load in the data
-    d3.json("../src/data.json", _dataLoaded);
+    d3.json('../src/data.json', _dataLoaded);
 
     function _dataLoaded(error, graph) {
         force
@@ -67,7 +67,7 @@ define(function(require, exports, module) {
                 var logo = new ImageSurface({
                     size: [50, 50],
                     content: '/content/images/famous_logo.png',
-                    classes: ['backfaceVisibility', "logo"]
+                    classes: ['backfaceVisibility', 'logo']
                 });
                 var centerSpinModifier = new Modifier({
                     origin: [0.5, 0.5],
@@ -95,9 +95,9 @@ define(function(require, exports, module) {
             })(nodes[i], i);           
 
         }//end for each node
-    }
+    }//end dataload
 
-    Engine.on("click", function(){
+    Engine.on('click', function(){
         force.alpha(.1);
-    })
+    });
 });
