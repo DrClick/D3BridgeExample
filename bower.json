@@ -1,0 +1,32 @@
+{
+  "name": "d3bridgeexample",
+  "description": "An example of how to use Famous to render a force graph calcuated by D3.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/drclick/d3bridgeexample",
+  "authors": [{
+    "name": "drclick",
+    "url": "http://github.com/drclick/"
+  }],
+  "main": "app/index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "famo.us"
+  ],
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.11",
+    "almond": "~0.2.9",
+    "famous-polyfills": "git+https://github.com/Famous/polyfills.git#0.1.1",
+    "famous": "~0.2.1"
+  }
+}
