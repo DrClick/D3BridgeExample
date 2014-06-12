@@ -19,38 +19,30 @@ define(function(require, exports, module) {
 
     var initialTime = Date.now();
 
-
+    //going to lay things out in a plane tilted in space
     var planeModifier = new Modifier({
         transform: Transform.rotateX(Math.PI/3)
     });
-
     var scene = mainContext.add(planeModifier);
 
-
+    //create the background
     var plane = new Surface({
         size: [window.innerWidth, window.innerHeight],
         properties:{
             backgroundColor: "rgba(255,255,255,.1)",
-            border: "1px solid red"
+            border: "1px solid #3cf"
         }
     });
     scene.add(new Modifier({
         transform: Transform.translate(0,-1000,-1000)
     })).add(plane);
 
-    //D3 Graph
-    var width = 960,
-        height = 500;
-
-    var color = d3.scale.category20();
-
+    //D3 Force Layout
     var force = d3.layout.force()
         .charge(-220)
         .linkDistance(30)
-        .size([width, height]);
+        .size([960, 500]);
 
-    this.surfaces = [];
-    this.surfaceModifiers = [];
 
     //load in the data
     d3.json("../src/data.json", _dataLoaded);
@@ -82,6 +74,8 @@ define(function(require, exports, module) {
                     align: [.5, .5],
                     opacity: .3 + Math.random(),
                     transform : function() {
+                    	//grab the xy coordinates calcuated by D3 and offset them as the origin
+                    	//from D3 is top left based
                         var x = (node.x - window.innerWidth/2) * 3;
                         var y = (node.y - window.innerHeight/2) * 2;
 
@@ -92,6 +86,7 @@ define(function(require, exports, module) {
                     }
                 });
 
+                //slowly add them
                 setTimeout(function(){
                     scene.add(centerSpinModifier).add(logo);
                     force.start();
