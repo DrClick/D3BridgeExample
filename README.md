@@ -1,5 +1,5 @@
 #D3BridgeExample
-> An example of how to use Famous to render a force graph calcuated by D3.
+> An example of how to use Famous to render a force graph calcuated by D3. The master repo for Famo.us is at http://github.com/famous/famous. Please support Famo.us by starring the repo.
 
 [![Build Status](https://travis-ci.org/drclick/d3bridgeexample.svg?branch=master)](https://travis-ci.org/drclick/d3bridgeexample) [![Dependency Status](https://david-dm.org/drclick/d3bridgeexample.svg)](https://david-dm.org/drclick/d3bridgeexample) [![devDependency Status](https://david-dm.org/drclick/d3bridgeexample/dev-status.svg)](https://david-dm.org/drclick/d3bridgeexample#info=devDependencies)
 
